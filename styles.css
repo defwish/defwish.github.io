@@ -1,66 +1,69 @@
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #202020;
-  font-family: Arial, sans-serif;
-}
-
-#timer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 50px;
-  color: #fff;
-}
-
-#time-left {
-  font-size: 6rem;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px #000;
-}
-
-.timer-button {
-  background-color: #f00;
-  color: #fff;
-  font-size: 2rem;
-  padding: 20px;
-  border: none;
-  border-radius: 5px;
-  margin: 10px;
-  text-shadow: 2px 2px #000;
-  transition: background-color 0.2s ease-in-out;
-}
-
-.timer-button:hover {
-  cursor: pointer;
-  background-color: #d00;
-}
-
-.timer-button:active {
-  background-color: #a00;
-}
-
-.pomodoro-button {
-  background-color: #f00;
-}
-
-.short-break-button {
-  background-color: #0f0;
-}
-
-.long-break-button {
-  background-color: #00f;
-}
-
-.reset-button {
-  background-color: #666;
-}
-
-.timer-button:not(.pomodoro-button):not(.short-break-button):not(.long-break-button):not(.reset-button) {
-  margin: 10px 10px 10px 0;
-}
-
+    background-color: #36393f;
+    color: #fff;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .header {
+    margin-bottom: 32px;
+    text-align: center;
+  }
+  
+  .timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #time-left {
+    font-size: 48px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  button {
+    background-color: #7289da;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #677bc4;
+  }
+  
+  /* Button colors for different types of timers */
+  #start-pomodoro {
+    background-color: #f04747;
+  }
+  
+  #start-short-break {
+    background-color: #43b581;
+  }
+  
+  #start-long-break {
+    background-color: #7289da;
+  }
+  
