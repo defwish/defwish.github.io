@@ -4,8 +4,8 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #2b2d42;
-  font-family: sans-serif;
+  background-color: #202020;
+  font-family: Arial, sans-serif;
 }
 
 #timer {
@@ -14,17 +14,17 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
+  color: #fff;
 }
 
 #time-left {
   font-size: 6rem;
-  color: #fff;
   margin-bottom: 20px;
   text-shadow: 2px 2px #000;
 }
 
 .timer-button {
-  background-color: #9146ff;
+  background-color: #f00;
   color: #fff;
   font-size: 2rem;
   padding: 20px;
@@ -37,27 +37,27 @@ body {
 
 .timer-button:hover {
   cursor: pointer;
-  background-color: #8035cc;
+  background-color: #d00;
 }
 
 .timer-button:active {
-  background-color: #6b2e9e;
+  background-color: #a00;
 }
 
 .pomodoro-button {
-  background-color: #5de61a;
+  background-color: #f00;
 }
 
 .short-break-button {
-  background-color: #f5be1f;
+  background-color: #0f0;
 }
 
 .long-break-button {
-  background-color: #f04747;
+  background-color: #00f;
 }
 
 .reset-button {
-  background-color: #4f545c;
+  background-color: #666;
 }
 
 .timer-button:not(.pomodoro-button):not(.short-break-button):not(.long-break-button):not(.reset-button) {
