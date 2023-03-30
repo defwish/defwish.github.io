@@ -1,53 +1,64 @@
-let timeLeft = 0;
-let timerId;
+let countdown;
+let timerDisplay = document.getElementById('time-left');
 
-function startTimer(duration, display) {
-  let timer = duration, minutes, seconds;
-  timerId = setInterval(function () {
-      minutes = parseInt(timer / 60, 10);
-      seconds = parseInt(timer % 60, 10);
-  
-      minutes = minutes < 10 ? "0" + minutes : minutes;
-      seconds = seconds < 10 ? "0" + seconds : seconds;
-  
-      display.textContent = minutes + ":" + seconds;
-  
-      if (--timer < 0) {
-          clearInterval(timerId);
-          alert("Time's up!");
-      }
+function timer(seconds) {
+  clearInterval(countdown);
+  const now = Date.now();
+  const then = now + seconds * 1000;
+  displayTimeLeft(seconds);
+
+  countdown = setInterval(() => {
+    const secondsLeft = Math.round((then - Date.now()) / 1000);
+
+    if (secondsLeft < 0) {
+      clearInterval(countdown);
+      return;
+    }
+
+    displayTimeLeft(secondsLeft);
   }, 1000);
 }
 
-function stopTimer() {
-  clearInterval(timerId);
+function displayTimeLeft(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const remainderSeconds = seconds % 60;
+  const display = `${minutes}:${remainderSeconds < 10 ? '0' : '' }${remainderSeconds}`;
+  timerDisplay.textContent = display;
 }
 
 function startPomodoro() {
-  timeLeft = 25 * 60; // 25 minutes in seconds
-  let display = document.querySelector('#time-left');
-  startTimer(timeLeft, display);
+  timer(1500);
 }
 
-function startBreak() {
-  timeLeft = 5 * 60; // 5 minutes in seconds
-  let display = document.querySelector('#time-left');
-  startTimer(timeLeft, display);
+function startShortBreak() {
+  timer(300);
 }
 
 function startLongBreak() {
-  timeLeft = 15 * 60; // 15 minutes in seconds
-  let display = document.querySelector('#time-left');
-  startTimer(timeLeft, display);
+  timer(900);
 }
 
 function resetTimer() {
-  stopTimer();
-  let display = document.querySelector('#time-left');
-  display.textContent = "25:00";
+  clearInterval(countdown);
+  timerDisplay.textContent = '25:00';
 }
 
-document.querySelector('#start-pomodoro').addEventListener('click', startPomodoro);
-document.querySelector('#start-short-break').addEventListener('click', startBreak);
-document.querySelector('#start-long-break').addEventListener('click', startLongBreak);
-document.querySelector('#reset-timer').addEventListener('click', resetTimer);
+document.getElementById('start-pomodoro').addEventListener('click', function() {
+  startPomodoro();
+  resetTimer();
+});
+
+document.getElementById('start-short-break').addEventListener('click', function() {
+  startShortBreak();
+  resetTimer();
+});
+
+document.getElementById('start-long-break').addEventListener('click', function() {
+  startLongBreak();
+  resetTimer();
+});
+
+document.getElementById('reset-timer').addEventListener('click', function() {
+  resetTimer();
+});
+
