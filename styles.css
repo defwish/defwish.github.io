@@ -1,70 +1,61 @@
-/* Base styles */
 body {
-    background-color: #36393f;
-    color: #fff;
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 14px;
-    margin: 0;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
-  .header {
-    margin-bottom: 32px;
-    text-align: center;
-  }
-  
-  .timer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  #time-left {
-    font-size: 48px;
-    margin-bottom: 16px;
-    text-align: center;
-  }
-  
-  .buttons {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  
-  button {
-    background-color: #7289da;
-    border: none;
-    border-radius: 3px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 8px 16px;
-    transition: background-color 0.2s ease-in-out;
-  }
-  
-  button:hover {
-    background-color: #677bc4;
-  }
-  
-  /* Button colors for different types of timers */
-  #start-pomodoro {
-    background-color: #f04747;
-  }
-  
-  #start-short-break {
-    background-color: #43b581;
-  }
-  
-  #start-long-break {
-    background-color: #7289da;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #202225;
+}
+
+#timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+#time-left {
+  font-size: 6rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.timer-button {
+  background-color: #7289da;
+  color: #fff;
+  font-size: 2rem;
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.timer-button:hover {
+  cursor: pointer;
+  background-color: #677bc4;
+}
+
+.timer-button:active {
+  background-color: #5865af;
+}
+
+.pomodoro-button {
+  background-color: #43b581;
+}
+
+.short-break-button {
+  background-color: #faa61a;
+}
+
+.long-break-button {
+  background-color: #f04747;
+}
+
+.reset-button {
+  background-color: #4f545c;
+}
+
+.timer-button:not(.pomodoro-button):not(.short-break-button):not(.long-break-button):not(.reset-button) {
+  margin: 10px 10px 10px 0;
+}
