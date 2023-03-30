@@ -63,3 +63,4 @@ body {
 .timer-button:not(.pomodoro-button):not(.short-break-button):not(.long-break-button):not(.reset-button) {
   margin: 10px 10px 10px 0;
 }
+
