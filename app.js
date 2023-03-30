@@ -27,14 +27,17 @@ function displayTimeLeft(seconds) {
 }
 
 function startPomodoro() {
+  resetTimer();
   timer(1500);
 }
 
 function startShortBreak() {
+  resetTimer();
   timer(300);
 }
 
 function startLongBreak() {
+  resetTimer();
   timer(900);
 }
 
@@ -43,22 +46,11 @@ function resetTimer() {
   timerDisplay.textContent = '25:00';
 }
 
-document.getElementById('start-pomodoro').addEventListener('click', function() {
-  startPomodoro();
-  resetTimer();
-});
+document.getElementById('start-pomodoro').addEventListener('click', startPomodoro);
 
-document.getElementById('start-short-break').addEventListener('click', function() {
-  startShortBreak();
-  resetTimer();
-});
+document.getElementById('start-short-break').addEventListener('click', startShortBreak);
 
-document.getElementById('start-long-break').addEventListener('click', function() {
-  startLongBreak();
-  resetTimer();
-});
+document.getElementById('start-long-break').addEventListener('click', startLongBreak);
 
-document.getElementById('reset-timer').addEventListener('click', function() {
-  resetTimer();
-});
+document.getElementById('reset-timer').addEventListener('click', resetTimer);
 
